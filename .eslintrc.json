@@ -1,3 +1,16 @@
 {
-  "extends": "next/core-web-vitals"
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@tanstack/query", "prettier"],
+  "extends": [
+    "plugin:@tanstack/eslint-plugin-query/recommended",
+    "eslint:recommended",
+    "next/core-web-vitals"
+  ],
+  "rules": {
+    "@tanstack/query/exhaustive-deps": "error",
+    "@tanstack/query/no-rest-destructuring": "warn",
+    "@tanstack/query/stable-query-client": "error",
+    "no-undef": "off",
+    "no-console": ["error", { "allow": ["error", "debug"] }]
+  }
 }
